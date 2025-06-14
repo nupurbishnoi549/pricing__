@@ -40,7 +40,7 @@ const Navigation = () => {
             <div className="flex items-center space-x-2">
               <Heart className="w-6 h-6 text-pink-400 animate-pulse" />
               <span className="text-xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-                For Anu
+                For Reena
               </span>
             </div>
             
