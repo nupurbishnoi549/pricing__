@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Play, Heart, Star, Sparkles } from 'lucide-react';
+import reenaVideo from "../assets/videos/reena.mp4"
 
 const FinalMessage = () => {
   const [showFireworks, setShowFireworks] = useState(false);
@@ -177,7 +178,7 @@ const FinalMessage = () => {
                 autoPlay
                 className="mx-auto w-full max-w-[90vw] sm:max-w-2xl md:max-w-3xl rounded-xl shadow-lg"
               >
-                <source src="public/reena.mp4" type="video/mp4" />
+                <source src={reenaVideo} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
 

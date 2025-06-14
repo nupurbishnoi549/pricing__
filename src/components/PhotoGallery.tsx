@@ -2,6 +2,13 @@ import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ChevronLeft, ChevronRight, Heart, Star } from 'lucide-react';
+import reena1 from '../assets/images/reennaaa.jpeg'
+import reena2 from '../assets/images/reena-13.png'
+import reena3 from '../assets/images/reena-lhnga.jpeg'
+import reena4 from '../assets/images/reena-4.png'
+import reena5 from '../assets/images/reena-5.png'
+import reena6 from '../assets/images/reena-6.png'
+import reena7 from '../assets/images/chotu-bcha.jpeg'
 
 const PhotoGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -13,43 +20,43 @@ const PhotoGallery = () => {
       id: 1,
       caption: "On her birthday, she smiled like the universe celebrated too ✨",
       feeling: "25 April – the day the stars seemed shy 🌸",
-      image: "public/reennaaa.jpeg"
+      image: reena1,
     },
     {
       id: 2,
       caption: "Every picture of her is a poem written in light 💖",
       feeling: "She doesn’t just smile, she creates sunrises 🌅",
-      image: "public/reena-13.png"
+      image: reena2,
     },
     {
       id: 3,
       caption: "With Reena, every ordinary moment becomes magical 🌟",
       feeling: "A hug in her vibe, a spark in her eyes 💫",
-      image: "public/reena-lhnga.jpeg"
+      image: reena3,
     },
     {
       id: 4,
       caption: "She’s not just a friend, she’s the celebration itself 🎉",
       feeling: "The joy of friendship in one soul 💕",
-      image: "public/reena-4.png"
+      image: reena4,
     },
     {
       id: 5,
       caption: "That smile? It could start revolutions or heal worlds 💥",
       feeling: "Caught between laughter and awe 😍",
-      image: "public/reena-5.png"
+      image: reena5 ,
     },
     {
       id: 6,
       caption: "Even mischief looks adorable when it’s her doing it 😜",
       feeling: "The cute chaos we all love 💫",
-      image: "public/reena-6.png"
+      image: reena6 ,
     },
     {
       id: 7,
       caption: "Pure elegance wrapped in charm ✨",
       feeling: "A memory painted in soft hues 💗",
-      image: "public/chotu-bcha.jpeg"
+      image: reena7 ,
     }
   ];
 
@@ -110,7 +117,7 @@ const PhotoGallery = () => {
               <img
                 src={photos[currentIndex].image}
                 alt={`Photo ${currentIndex + 1}`}
-                className="w-full h-full md:object-cover object-contain transition-opacity duration-700"
+                className="w-full h-full  object-contain transition-opacity duration-700"
               />
             ) : (
               <div className="w-full h-full bg-gradient-to-br from-pink-400 via-purple-400 to-blue-400 flex items-center justify-center relative overflow-hidden">

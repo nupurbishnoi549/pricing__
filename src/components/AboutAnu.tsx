@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Sparkles, Smile, Heart, Crown, Star, Users } from 'lucide-react';
+import reena from '../assets/images/reena-1.png'
 
 const AboutReena = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -57,7 +58,7 @@ const AboutReena = () => {
               {/* Reena's Photo */}
               <div className="w-full h-80 rounded-2xl mb-4 overflow-hidden border border-white/10 shadow-lg">
                 <img
-                  src="public/reena-1.png"
+                  src={reena}
                   alt="Reena"
                   className="w-full h-full object-cover object-center"
                 />
