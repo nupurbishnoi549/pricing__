@@ -55,7 +55,7 @@ const FloatingElements = () => {
     // Floating A monogram
     const createMonogram = () => {
       const monogram = document.createElement('div');
-      monogram.innerHTML = 'A';
+      monogram.innerHTML = 'Reena💖';
       monogram.className = 'fixed pointer-events-none z-30 text-6xl font-bold text-pink-400/20 select-none';
       monogram.style.left = Math.random() * window.innerWidth + 'px';
       monogram.style.top = window.innerHeight + 'px';
@@ -91,7 +91,7 @@ const FloatingElements = () => {
       </div>
       
       <div className="fixed bottom-20 left-10 z-30 animate-pulse" style={{ animationDuration: '2s' }}>
-        <div className="text-4xl text-purple-400/20 font-bold select-none">A</div>
+        <div className="text-4xl text-purple-400/20 font-bold select-none">R</div>
       </div>
 
       <div className="fixed top-1/3 left-20 z-30 animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}>

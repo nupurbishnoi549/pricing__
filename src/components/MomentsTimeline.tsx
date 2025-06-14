@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -9,23 +8,23 @@ const MomentsTimeline = () => {
 
   const moments = [
     {
-      date: "22nd March",
-      title: "Her First Exam Duty",
-      description: "...and I smiled 100 times watching her determination",
+      date: "shyd 19 ya 20 november",
+      title: "When She Said 'Hi'",
+      description: "Three letters that changed everything for me",
       icon: Book,
       color: "from-blue-400 to-purple-400"
     },
     {
-      date: "15th April", 
+      date: "20th March",
       title: "The Day She Laughed",
       description: "Her laughter became my favorite sound in the universe",
       icon: Heart,
       color: "from-pink-400 to-red-400"
     },
     {
-      date: "3rd May",
-      title: "When She Said 'Hi'",
-      description: "Three letters that changed everything for me",
+      date: "25th April",
+      title: "Her Birthday Glow",
+      description: "That day, her smile outshined everything — the day this world got its brightest light",
       icon: Star,
       color: "from-yellow-400 to-orange-400"
     },
@@ -42,7 +41,7 @@ const MomentsTimeline = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     const timelineItems = document.querySelectorAll('.timeline-item');
-    
+
     timelineItems.forEach((item, index) => {
       gsap.fromTo(item,
         { opacity: 0, x: index % 2 === 0 ? -100 : 100 },
@@ -60,7 +59,6 @@ const MomentsTimeline = () => {
       );
     });
 
-    // Animate the timeline line
     gsap.fromTo('.timeline-line',
       { height: 0 },
       {
@@ -89,21 +87,22 @@ const MomentsTimeline = () => {
         </div>
 
         <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-purple-400 to-pink-400 timeline-line"></div>
+          {/* Timeline line (always visible) */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-purple-400 to-pink-400 h-full timeline-line z-0"></div>
 
           {/* Timeline items */}
           <div className="space-y-16">
             {moments.map((moment, index) => {
               const IconComponent = moment.icon;
               const isLeft = index % 2 === 0;
-              
+
               return (
-                <div key={index} className={`timeline-item flex items-center ${isLeft ? 'flex-row' : 'flex-row-reverse'}`}>
+                <div key={index} className={`timeline-item flex flex-col sm:flex-row items-center sm:items-stretch ${isLeft ? 'sm:flex-row' : 'sm:flex-row-reverse'}`}>
+
                   {/* Content card */}
-                  <div className={`w-5/12 ${isLeft ? 'pr-8' : 'pl-8'}`}>
-                    <div className="group bg-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-6 transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:shadow-2xl">
-                      <div className="flex items-center mb-4">
+                  <div className={`w-full sm:w-5/12 ${isLeft ? 'sm:pr-8' : 'sm:pl-8'} mb-6 sm:mb-0`}>
+                    <div className="group bg-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-6 transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:shadow-2xl text-center sm:text-left">
+                      <div className="flex items-center justify-center sm:justify-start mb-4">
                         <div className={`p-3 rounded-full bg-gradient-to-r ${moment.color} mr-3`}>
                           <IconComponent className="w-5 h-5 text-white" />
                         </div>
@@ -111,31 +110,30 @@ const MomentsTimeline = () => {
                           {moment.date}
                         </span>
                       </div>
-                      
+
                       <h3 className="text-xl font-bold text-white mb-2 group-hover:text-pink-300 transition-colors">
                         {moment.title}
                       </h3>
-                      
+
                       <p className="text-white/70 leading-relaxed">
                         {moment.description}
                       </p>
 
-                      {/* Hover heart effect */}
-                      <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-center sm:justify-start">
                         <Heart className="w-4 h-4 text-pink-400 animate-pulse" />
                       </div>
                     </div>
                   </div>
 
                   {/* Center dot */}
-                  <div className="w-2/12 flex justify-center">
-                    <div className={`w-4 h-4 rounded-full bg-gradient-to-r ${moment.color} border-4 border-black z-10 relative`}>
+                  <div className="w-full sm:w-2/12 flex justify-center relative z-10 mb-6 sm:mb-0">
+                    <div className={`w-4 h-4 rounded-full bg-gradient-to-r ${moment.color} border-4 border-black relative`}>
                       <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/20 to-transparent animate-ping"></div>
                     </div>
                   </div>
 
-                  {/* Empty space for alternating layout */}
-                  <div className="w-5/12"></div>
+                  {/* Spacer for desktop */}
+                  <div className="hidden sm:block w-5/12"></div>
                 </div>
               );
             })}

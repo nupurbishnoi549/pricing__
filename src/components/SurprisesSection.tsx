@@ -29,9 +29,9 @@ const SurprisesSection = () => {
     {
       id: 3,
       icon: Crown,
-      title: "Queen Qualities",
+      title: "What Makes You Shine",
       frontText: "Royal secrets inside",
-      backText: "Grace, wisdom, beauty, and strength - you possess all the qualities of a true queen. You rule hearts with kindness and inspire others just by being yourself.",
+      backText: "Grace, wisdom, beauty, and strength – you carry them all so effortlessly. You touch hearts with kindness and inspire others simply by being yourself.",
       color: "from-purple-400 to-indigo-400"
     }
   ];
